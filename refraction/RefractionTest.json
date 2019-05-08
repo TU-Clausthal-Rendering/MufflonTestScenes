@@ -1,0 +1,135 @@
+{
+    "version" : "1.1",
+    "binary" : "RefractionTest.mff",
+    "defaultScenario" : "Walter",
+    "cameras" : {
+        "Camera" : {
+            "type" : "pinhole",
+            "fov" : 36.2,
+            "path" : [[0, 2.46, 2.9]],
+            "viewDir" : [[-5.85e-07, -0.643, -0.766]],
+            "up" : [[6.97e-07, 0.766, -0.643]]
+        }
+    },
+    "lights" : {
+    },
+    "materials" : {
+        "Floor" : {
+            "type" : "lambert",
+            "albedo" : [0.5, 0.5, 0.8]
+        },
+        "Light" : {
+            "type" : "emissive",
+            "radiance" : [0.8, 0.8, 0.8],
+            "scale" : [1, 1, 1]
+        },
+        "Material" : {
+            "ior" : 1.3,
+            "type" : "walter",
+            "roughness" : 0.734,
+            "ndf" : "GGX",
+            "absorption" : [0, 0, 0]
+        },
+        "Fresnel" : {
+            "ior" : [1.3, 0],
+            "type" : "fresnel",
+            "layerRefraction" : {
+                "type" : "walter",
+                "roughness" : 0.365,
+                "ndf" : "GGX",
+                "absorption" : [0, 0, 0],
+                "ior" : 1.3
+            },
+            "layerReflection" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.365,
+                "ndf" : "GGX"
+            }
+        },
+        "Microfacet" : {
+            "type" : "microfacet",
+            "roughness" : 0.365,
+            "ndf" : "GGX",
+            "absorption" : [0, 0, 0],
+            "ior" : 1.3
+        },
+        "MicrofacetVolumetric" : {
+            "type" : "microfacet",
+            "roughness" : 0.365,
+            "ndf" : "GGX",
+            "absorption" : [8, 0.5, 8],
+            "ior" : 1.3
+        },
+        "InnerLight" : {
+            "type" : "emissive",
+            "radiance" : [0.8, 0.8, 0.8],
+            "scale" : [1, 1, 1]
+        },
+        "InnerLightVolumetric" : {
+            "type" : "emissive",
+            "radiance" : [0.8, 0.8, 0.8],
+            "scale" : [1, 1, 1],
+            "outerMedium" : {
+                "absorption" : [8, 0.5, 8],
+                "ior" : 1.3
+            }
+        },
+        "OuterLight" : {
+            "type" : "emissive",
+            "radiance" : [0.8, 0.8, 0.8],
+            "scale" : [1, 1, 1]
+        },
+        "InnerFloor" : {
+            "type" : "lambert",
+            "albedo" : [0.5, 0.5, 0.8]
+        },
+        "InnerFloorVolumetric" : {
+            "outerMedium" : {
+                "absorption" : [8, 0.5, 8],
+                "ior" : 1.3
+            },
+            "type" : "lambert",
+            "albedo" : [0.5, 0.5, 0.8]
+        }
+    },
+    "scenarios" : {
+        "Walter" : {
+            "camera" : "Camera",
+            "resolution" : [1000, 500],
+            "lights" : [],
+            "lod" : 0,
+            "materialAssignments" : {
+                "InnerLight" : "InnerLight",
+                "OuterLight" : "OuterLight",
+                "Material" : "Material",
+                "InnerFloor" : "InnerFloor",
+                "Floor" : "Floor"
+            },
+            "objectProperties" : {
+            },
+            "instanceProperties" : {
+            }
+        },
+        "Fresnel Blend" : {
+            "parentScenario" : "Walter",
+            "materialAssignments" : {
+                "Material" : "Fresnel"
+            }
+        },
+        "Microfacet" : {
+            "parentScenario" : "Walter",
+            "materialAssignments" : {
+                "Material" : "Microfacet"
+            }
+        },
+        "Volumetric" : {
+            "parentScenario" : "Walter",
+            "materialAssignments" : {
+                "Material" : "MicrofacetVolumetric",
+                "InnerLight" : "InnerLightVolumetric",
+                "InnerFloor" : "InnerFloorVolumetric"
+            }
+        }
+    }
+}
