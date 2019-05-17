@@ -1,0 +1,206 @@
+{
+    "version" : "1.1",
+    "binary" : "blender_mat_preview.mff",
+    "defaultScenario" : "Gold",
+    "cameras" : {
+        "Camera.001" : {
+            "type" : "pinhole",
+            "fov" : 13,
+            "path" : [[2.68, 3.74, 5.91]],
+            "viewDir" : [[-0.388, -0.463, -0.797]],
+            "up" : [[-0.224, 0.886, -0.406]]
+        }
+    },
+    "lights" : {
+        "Envmap" : {
+            "type" : "envmap",
+            "map" : "studio015.hdr",
+            "scale" : 1
+        }
+    },
+    "materials" : {
+        "Blender" : {
+            "type" : "blend",
+            "factorA" : 0.1,
+            "factorB" : 0.9,
+            "layerA" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.86,
+                "ndf" : "GGX"
+            },
+            "layerB" : {
+                "type" : "lambert",
+                "albedo" : [0.0871, 0.0871, 0.0871]
+            }
+        },
+        "Floor" : {
+            "type" : "lambert",
+            "albedo" : [0.64, 0.64, 0.64]
+        },
+        "Socket" : {
+            "type" : "blend",
+            "factorA" : 0.1,
+            "factorB" : 0.8,
+            "layerA" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.783,
+                "ndf" : "GGX"
+            },
+            "layerB" : {
+                "type" : "lambert",
+                "albedo" : [0.22, 0.22, 0.22]
+            }
+        },
+        "SolidSphere" : {
+            "type" : "blend",
+            "factorA" : 0.5,
+            "factorB" : 0.5,
+            "layerA" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.982,
+                "ndf" : "GGX"
+            },
+            "layerB" : {
+                "type" : "lambert",
+                "albedo" : [0.8, 0.8, 0.8]
+            }
+        },
+        "Test Material" : {
+            "type" : "torrance",
+            "albedo" : [1, 0.591, 0],
+            "roughness" : 0.52,
+            "ndf" : "GGX"
+        },
+        "X-Gray160" : {
+            "type" : "blend",
+            "factorA" : 0.1,
+            "factorB" : 0.8,
+            "layerA" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.86,
+                "ndf" : "GGX"
+            },
+            "layerB" : {
+                "type" : "lambert",
+                "albedo" : [0.341, 0.341, 0.341]
+            }
+        },
+        "X-Gray191.001" : {
+            "type" : "blend",
+            "factorA" : 0.1,
+            "factorB" : 0.8,
+            "layerA" : {
+                "type" : "torrance",
+                "albedo" : [1, 1, 1],
+                "roughness" : 0.86,
+                "ndf" : "GGX"
+            },
+            "layerB" : {
+                "type" : "lambert",
+                "albedo" : [0.49, 0.49, 0.49]
+            }
+        },
+        "X-Lights.001" : {
+            "type" : "emissive",
+            "radiance" : [1, 1, 1],
+            "scale" : [10, 10, 10]
+        },
+        "X-Lights.002" : {
+            "type" : "emissive",
+            "radiance" : [1, 1, 1],
+            "scale" : [10, 10, 10]
+        },
+        "X-Lights.003" : {
+            "type" : "emissive",
+            "radiance" : [1, 1, 1],
+            "scale" : [10, 10, 10]
+        },
+        "Gold" : {
+            "ior" : [0.19, 3.24],
+            "type" : "fresnel",
+            "layerRefraction" : {
+                "type" : "lambert",
+                "albedo" : [0.01, 0.005, 0.001]
+            },
+            "layerReflection" : {
+                "type" : "torrance",
+                "albedo" : [0.97, 0.8, 0.25],
+                "roughness" : 0.01,
+                "ndf" : "GGX"
+            }
+        },
+        "Glass" : {
+            "type" : "microfacet",
+            "roughness" : 0.0001,
+            "ndf" : "GGX",
+            "absorption" : [0.4, 0.3, 0.2],
+            "ior" : 1.3
+        },
+        "LambertGreen" : {
+            "type" : "lambert",
+            "albedo" : [0.02, 0.7, 0.02]
+        },
+        "OrenNayarGreen" : {
+            "type" : "orennayar",
+            "albedo" : [0.02, 0.7, 0.02],
+            "roughness" : 3.14
+        }
+    },
+    "scenarios" : {
+        "Glossy Orange" : {
+            "camera" : "Camera.001",
+            "resolution" : [800, 800],
+            "lights" : ["Envmap"],
+            "lod" : 0,
+            "materialAssignments" : {
+                "X-Lights.002" : "X-Lights.002",
+                "X-Gray160" : "X-Gray160",
+                "Test Material" : "Test Material",
+                "SolidSphere" : "SolidSphere",
+                "X-Lights.001" : "X-Lights.001",
+                "X-Gray191.001" : "X-Gray191.001",
+                "Floor" : "Floor",
+                "Socket" : "Socket",
+                "Blender" : "Blender",
+                "X-Lights.003" : "X-Lights.003"
+            },
+            "instanceProperties" : {
+            }
+        },
+        "Gold" : {
+            "parentScenario" : "Glossy Orange",
+            "materialAssignments" : {
+                "Test Material" : "Gold"
+            }
+        },
+        "Glass" : {
+            "parentScenario" : "Glossy Orange",
+            "materialAssignments" : {
+                "Test Material" : "Glass"
+            },
+            "instanceProperties" : {
+                "SolidSphere" : {
+                    "mask" : true
+                }
+            }
+        },
+        "Lambert (Green)" : {
+            "parentScenario" : "Glossy Orange",
+            "lights" : [],
+            "materialAssignments" : {
+                "Test Material" : "LambertGreen"
+            }
+        },
+        "Oren-Nayar (Green)" : {
+            "parentScenario" : "Glossy Orange",
+            "lights" : [],
+            "materialAssignments" : {
+                "Test Material" : "OrenNayarGreen"
+            }
+        }
+    }
+}
