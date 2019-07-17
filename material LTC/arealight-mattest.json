@@ -1,0 +1,209 @@
+{
+    "version" : "1.3",
+    "binary" : "arealight-mattest.mff",
+    "defaultScenario" : "Scene",
+    "cameras" : {
+        "Camera" : {
+            "type" : "pinhole",
+            "fov" : 31.9,
+            "path" : [[12, 3.59, 3.35]],
+            "viewDir" : [[-0.982, -0.147, -0.117]],
+            "up" : [[-0.146, 0.989, -0.0173]]
+        }
+    },
+    "lights" : {
+        "Lamp" : {
+            "type" : "point",
+            "position" : [[0, 2, 0]],
+            "intensity" : [[1, 1, 1]],
+            "scale" : [1]
+        }
+    },
+    "materials" : {
+        "Diffuse" : {
+            "type" : "lambert",
+            "albedo" : [0.8, 0.8, 0.8]
+        },
+        "Oren-Nayar Beckmann 0.001" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.001
+        },
+        "Oren-Nayar Beckmann 0.01" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.01
+        },
+        "Oren-Nayar Beckmann 0.1" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.1
+        },
+        "Oren-Nayar Beckmann 0.2" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.2
+        },
+        "Oren-Nayar Beckmann 0.5" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.5
+        },
+        "Oren-Nayar Beckmann 1" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 1
+        },
+        "Oren-Nayar GGX 0.001" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.001
+        },
+        "Oren-Nayar GGX 0.01" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.01
+        },
+        "Oren-Nayar GGX 0.1" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.1
+        },
+        "Oren-Nayar GGX 0.2" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.2
+        },
+        "Oren-Nayar GGX 0.5" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 0.5
+        },
+        "Oren-Nayar GGX 1" : {
+            "type" : "orennayar",
+            "albedo" : [0.8, 0.8, 0.8],
+            "roughness" : 1
+        },
+        "Torrance Beckmann 0.001" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.000994,
+            "ndf" : "BS"
+        },
+        "Torrance Beckmann 0.01" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.00998,
+            "ndf" : "BS"
+        },
+        "Torrance Beckmann 0.1" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.0998,
+            "ndf" : "BS"
+        },
+        "Torrance Beckmann 0.5" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.502,
+            "ndf" : "BS"
+        },
+        "Torrance Beckmann 1" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.994,
+            "ndf" : "BS"
+        },
+        "Torrance GGX 0.001" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.000994,
+            "ndf" : "GGX"
+        },
+        "Torrance GGX 0.01" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.00998,
+            "ndf" : "GGX"
+        },
+        "Torrance GGX 0.1" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.101,
+            "ndf" : "GGX"
+        },
+        "Torrance GGX 0.2" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.2,
+            "ndf" : "GGX"
+        },
+        "Torrance GGX 0.5" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.502,
+            "ndf" : "GGX"
+        },
+        "Torrance GGX 1" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.994,
+            "ndf" : "GGX"
+        },
+        "Torriance Beckmann 0.2" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.2,
+            "ndf" : "BS"
+        },
+        "Light" : {
+            "type" : "emissive",
+            "radiance" : [0.8, 0.8, 0.8],
+            "scale" : [10, 10, 10]
+        },
+        "Torrance Beckmann 0.2" : {
+            "type" : "torrance",
+            "albedo" : [1, 1, 1],
+            "roughness" : 0.2,
+            "ndf" : "BS"
+        }
+    },
+    "scenarios" : {
+        "Scene" : {
+            "camera" : "Camera",
+            "resolution" : [1600, 1000],
+            "lights" : [],
+            "lod" : 0,
+            "materialAssignments" : {
+                "Oren-Nayar Beckmann 0.5" : "Oren-Nayar Beckmann 0.5",
+                "Torrance GGX 0.01" : "Torrance GGX 0.01",
+                "Oren-Nayar GGX 0.2" : "Oren-Nayar GGX 0.2",
+                "Oren-Nayar GGX 1" : "Oren-Nayar GGX 1",
+                "Torrance Beckmann 1" : "Torrance Beckmann 1",
+                "Torrance GGX 0.1" : "Torrance GGX 0.1",
+                "Torrance Beckmann 0.001" : "Torrance Beckmann 0.001",
+                "Torrance GGX 0.5" : "Torrance GGX 0.5",
+                "Diffuse" : "Diffuse",
+                "Torrance Beckmann 0.5" : "Torrance Beckmann 0.5",
+                "Oren-Nayar GGX 0.5" : "Oren-Nayar GGX 0.5",
+                "Torrance GGX 0.2" : "Torrance GGX 0.2",
+                "Torrance GGX 0.001" : "Torrance GGX 0.001",
+                "Oren-Nayar GGX 0.01" : "Oren-Nayar GGX 0.01",
+                "Oren-Nayar GGX 0.1" : "Oren-Nayar GGX 0.1",
+                "Torrance Beckmann 0.1" : "Torrance Beckmann 0.1",
+                "Oren-Nayar Beckmann 0.1" : "Oren-Nayar Beckmann 0.1",
+                "Oren-Nayar Beckmann 0.01" : "Oren-Nayar Beckmann 0.01",
+                "Torrance Beckmann 0.2" : "Torrance Beckmann 0.2",
+                "Torrance GGX 1" : "Torrance GGX 1",
+                "Oren-Nayar GGX 0.001" : "Oren-Nayar GGX 0.001",
+                "Torrance Beckmann 0.01" : "Torrance Beckmann 0.01",
+                "Light" : "Light",
+                "Oren-Nayar Beckmann 1" : "Oren-Nayar Beckmann 1",
+                "Oren-Nayar Beckmann 0.001" : "Oren-Nayar Beckmann 0.001",
+                "Oren-Nayar Beckmann 0.2" : "Oren-Nayar Beckmann 0.2"
+            },
+            "instanceProperties" : {
+            }
+        }
+    }
+}
